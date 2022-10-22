@@ -1,0 +1,166 @@
+header {
+    min-width: 100%;
+    min-height: 100vh;
+    min-height: fill-available;
+
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    
+    color: var(--hero-color);
+
+    .hero {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        position: absolute;
+        z-index: 3;
+
+        font-size: clamp(0.8rem, 3.5vw, 1.2rem);
+        mix-blend-mode: hard-light;
+
+                
+        h1 {
+            font-size: 3em;
+            width: min-content;
+            line-height: 0.9;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-weight: var(--regular);            
+        }
+        h2 {
+            font-size: 1.7em;
+            font-weight: var(--regular);            
+        }
+        ul.hero-skills {
+            margin-bottom: clamp(0.5rem, 20vh, 6rem);
+            li {
+                --length: 24;
+                --animation-duration: 6s;
+                --start-delay: 5s;
+                --appear-animation: appear var(--start-delay) forwards;
+
+                --erase-animation: 
+                    typewriter 
+                    calc(var(--animation-duration) - var(--start-delay))
+                    steps(var(--length)) 
+                    var(--start-delay) 
+                    forwards;
+                --blink-animation: blink 0.8s infinite;
+                font-family: var(--ff-monospace);
+                font-size: 1em;                
+                position: relative;
+                padding-left: 0.5em;
+
+                &.animated {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    position: absolute;
+                    padding: 0;
+                    display: none;
+                    width: calc(1ch * var(--length));
+                    animation: var(--appear-animation), var(--erase-animation);
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        width: 0.125em;
+                        background-color: var(--hero-color);
+                        animation: var(--blink-animation);
+                    }
+                }
+            }
+        }
+        button.hero-btn {
+            align-self: center;
+            background-color: transparent;
+            font-size: 0.8em;
+            color: var(--hero-color);
+            border: 1px var(--hero-color) solid;
+        }
+    }
+}
+
+@keyframes appear {
+    from { opacity: 0 }
+    20% { opacity: 1 }
+}
+
+@keyframes typewriter {
+    to { width: 0 }
+}
+
+@keyframes blink {
+    to { background-color: transparent }
+}
+
+
+header {
+    overflow: hidden;
+    animation: theme 23s linear infinite;
+    
+    &:after,
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100vmax;
+        height: 100vmax;
+        background: rgba(0, 0, 0, 0.1);
+        animation: background 200s linear infinite;
+    }
+
+    &:after {
+        left: 15vw;
+    }
+
+    &:before {
+        right: 15vw;
+        animation-delay: -30s;
+        animation-direction: reverse;
+    }
+}
+
+@keyframes theme {
+    0% {
+        background: #305b3f;
+    }
+    
+    16% {
+        background: #346a67;
+    }
+    
+    33% {
+        background: #358189;
+    }
+    
+    50% {
+        background: #204e61;
+    }
+    
+    66% {
+        background: #8a2b3e;
+    }    
+    
+    83% {
+        background: #6f2a20;
+    }
+
+    100% {
+        background: #33563f;
+    }
+}
+
+@keyframes background {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    100% {
+        transform: rotate(360deg);
+    }
+}

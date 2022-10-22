@@ -1,0 +1,45 @@
+
+// CSS Variables
+:root {
+    /* Sizes */
+    --navbar-height: 60px;
+    --footer-height: 200px;
+
+    --project-card-size: min(300px, 80vw);
+
+    /* Fonts */
+    --ff-main: 'Poppins', sans-serif;
+    --ff-monospace: 'Source Code Pro', monospace;
+    --thin: 200;
+    --regular: 400;
+    --bold: 700;
+
+    /* Colors */
+    --light-gray: #c5c5c5;
+    --main-background-color: #fff;
+    --main-color: #1d3557;
+    --main-color-light: #f1faee;
+
+    --hero-background-color: #1d3557; 
+    --hero-color: #f1faee;
+
+    --navbar-background-color: #00000099;    
+    --navbar-color: #ccc;
+    --navbar-hover-color: #fff;
+
+    --section-even-background-color: #f1faee;
+    --section-odd-background-color:  #fff;
+
+    --footer-background-color: #1d3557;
+    --footer-color: #f1faee;
+
+    /* Transitions and Animations */
+    --default-transition-duration: 200ms;
+    --default-hover-transition: var(--default-transition-duration) ease-out;
+}
+
+
+body.dark-theme {
+    --main-background-color: #000;
+    --main-color: #fff;
+}

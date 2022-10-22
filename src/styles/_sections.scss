@@ -1,0 +1,19 @@
+main {
+    section.pane {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        padding: 5em clamp(0.5em, 6%, 5em);
+
+        h2 {
+            margin-bottom: 2em;
+        }
+        &:nth-child(odd) {
+            background-color: var(--section-odd-background-color);
+        }    
+        &:nth-child(even) {
+            background-color: var(--section-even-background-color);
+        }
+
+    }
+}

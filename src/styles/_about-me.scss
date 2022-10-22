@@ -1,0 +1,24 @@
+.about-me-wrapper {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  gap: 1em;
+
+  .about-me-img {
+    justify-self: center;
+    img {
+      max-width: 200px;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .about-me-wrapper {
+    grid-template-columns: minmax(120px, 40%) 1fr;
+    .about-me-img {
+      justify-self: right;
+      padding-right: 3em;
+      border-right: 1px solid var(--light-gray);
+    }
+  }
+}
