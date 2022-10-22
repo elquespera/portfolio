@@ -7,7 +7,8 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
+    "deploy2": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages && git subtree add --prefix dist --squash",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -25,6 +26,7 @@
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^2.6.1",
