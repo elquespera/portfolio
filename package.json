@@ -7,7 +7,6 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "deploy2": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages && git subtree add --prefix dist --squash",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "engines": {
